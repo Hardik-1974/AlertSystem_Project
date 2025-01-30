@@ -1,0 +1,8 @@
+../Core/Src/main.c:66:11:read_temperature	16	static
+../Core/Src/main.c:80:7:send_temperature	16	static
+../Core/Src/main.c:92:5:main	56	static
+../Core/Src/main.c:148:6:SystemClock_Config	88	static
+../Core/Src/main.c:195:13:MX_ADC1_Init	24	static
+../Core/Src/main.c:247:13:MX_USART2_UART_Init	8	static
+../Core/Src/main.c:280:13:MX_GPIO_Init	40	static
+../Core/Src/main.c:313:6:Error_Handler	4	static,ignoring_inline_asm
