@@ -60,8 +60,8 @@ all: main-build
 main-build: MQ2_Sensor.elf secondary-outputs
 
 # Tool invocations
-MQ2_Sensor.elf MQ2_Sensor.map: $(OBJS) $(USER_OBJS) /home/sunbeam/STM32CubeIDE/workspace_1.16.1/Project_CDAC/MQ2_Sensor/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "MQ2_Sensor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/sunbeam/STM32CubeIDE/workspace_1.16.1/Project_CDAC/MQ2_Sensor/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MQ2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+MQ2_Sensor.elf MQ2_Sensor.map: $(OBJS) $(USER_OBJS) /home/sunbeam/STM32CubeIDE/workspace_1.16.1/VLX\ Sensor/MQ2_Sensor/STM32F407VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "MQ2_Sensor.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/sunbeam/STM32CubeIDE/workspace_1.16.1/VLX Sensor/MQ2_Sensor/STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MQ2_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

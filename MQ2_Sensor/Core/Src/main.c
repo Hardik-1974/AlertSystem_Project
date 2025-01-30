@@ -21,7 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "stdio.h"
+#include<string.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -45,6 +46,9 @@ ADC_HandleTypeDef hadc1;
 UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
+uint32_t adc_value=0;
+char Msg[50];
+GPIO_InitTypeDef GPIO_InitStruct = {0}; // GPIO init struct for LED
 
 /* USER CODE END PV */
 
@@ -101,7 +105,19 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    /* USER CODE END WHILE */
+	  HAL_ADC_Start(&hadc1);
+	  if (HAL_ADC_PollForConversion(&hadc1, HAL_MAX_DELAY) == HAL_OK)
+	  {
+	       // Get the ADC value
+		  adc_value = HAL_ADC_GetValue(&hadc1);
+	       // Convert ADC value to string
+	       sprintf(Msg, "Gas Level: %lu\r\n", adc_value);
+	       // Transmit over UART
+	       HAL_UART_Transmit(&huart2, (uint8_t*)Msg, strlen(Msg), HAL_MAX_DELAY);
+	    }
+	    HAL_ADC_Stop(&hadc1);
+        HAL_Delay(1000); // Delay 1 second
+   /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
   }
