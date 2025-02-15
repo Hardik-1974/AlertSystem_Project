@@ -1,0 +1,5 @@
+../Core/Src/newMotor.c:7:7:GPIO_Init	4	static
+../Core/Src/newMotor.c:21:7:TIM2_Init	4	static
+../Core/Src/newMotor.c:31:7:TIM3_Init	4	static
+../Core/Src/newMotor.c:51:7:Motor_Control	16	static
+../Core/Src/newMotor.c:93:7:TIM4_ms_Delay	16	static
